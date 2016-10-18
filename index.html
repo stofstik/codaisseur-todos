@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TodoList</title>
+
+  <link href="stylesheets/application.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <h1>TodoList</h1>
+
+    <form>
+      <input type="text" id="new-todo" placeholder="What needs to be done?">
+    </form>
+
+    <ul id="todolist">
+      <li class="todo">
+        <input id="todo-1" type="checkbox" value="1">
+        <label for="todo-1">Sweep the floor</label>
+      </li>
+      <li class="todo completed">
+        <input id="todo-2" type="checkbox" value="1" checked>
+        <label for="todo-2">Dust the vases</label>
+      </li>
+    </ul>
+    <div class="footer">
+      Todo: <span id="todo-count">1</span> •
+      Done: <span id="completed-count">0</span> •
+      Total: <span id="total-count">1</span>
+    </div>
+  </div>
+</body>
+    <script src="scripts/todos.js"></script>
+</html>
