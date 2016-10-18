@@ -9,15 +9,12 @@ var todos = function(document, window) {
     function calc() {
         var completed = document.getElementsByClassName('completed').length;
         countCompleted.innerHTML = completed;
-        console.log('completed ' + completed);
 
         var total = document.getElementsByClassName('todo').length;
         countTotal.innerHTML = total;
-        console.log('total ' + total);
 
         var todo = total - completed;
         countTodo.innerHTML = todo;
-        console.log('todo ' + todo);
     }
 
     function createTodo(title) {
@@ -71,6 +68,19 @@ var todos = function(document, window) {
         var title = input.value;
         createTodo(title);
         input = null;
+    };
+
+    document.cleanUpDoneTodos = function() {
+        var list = document.getElementById("todolist");
+        var doneItems = document.getElementsByClassName("completed");
+
+        // Reverse loop through the done todo items so we can remove them without
+        // changing the index of the remaining items when we remove them
+        for (var i = doneItems.length; i > 0; i--) {
+            list.removeChild(doneItems[i - 1]);
+        }
+
+        calc();
     };
 
     calc();
