@@ -10,17 +10,17 @@
   <div class="container">
     <h1>TodoList</h1>
 
-    <form>
+    <form onSubmit="submitTodo.bind(this)(); return false;">
       <input type="text" id="new-todo" placeholder="What needs to be done?">
     </form>
 
     <ul id="todolist">
       <li class="todo">
-        <input id="todo-1" type="checkbox" value="1">
+      <input id="todo-1" type="checkbox" value="1" onChange="toggle.bind(this)();">
         <label for="todo-1">Sweep the floor</label>
       </li>
       <li class="todo completed">
-        <input id="todo-2" type="checkbox" value="1" checked>
+        <input id="todo-2" type="checkbox" value="1" onChange="toggle.bind(this)();" checked>
         <label for="todo-2">Dust the vases</label>
       </li>
     </ul>
